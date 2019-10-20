@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.lti.finance.dao.GenericDao;
 import com.lti.finance.entity.Product;
+import com.lti.finance.entity.User;
 
 @Service("ss")
 public class FinanceService {
@@ -14,6 +15,10 @@ public class FinanceService {
 	
 	public void addProduct(Product product) {
 		dao.upsert(product);
+	}
+	
+	public void register(User user) {
+		dao.upsert(user);
 	}
 
 }

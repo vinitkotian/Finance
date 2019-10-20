@@ -2,13 +2,13 @@ package com.lti.finance.entity;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -34,7 +34,7 @@ public class Product {
 	@Column(name = "PRODUCT_IMG")
 	private String productIMG;
 	
-	@OneToMany
+	@OneToMany(mappedBy="product" ,cascade=CascadeType.MERGE)
 	private Set<Transaction> transaction;
 
 	public int getProductId() {
@@ -71,6 +71,14 @@ public class Product {
 
 	public String getProductIMG() {
 		return productIMG;
+	}
+
+	public Set<Transaction> getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(Set<Transaction> transaction) {
+		this.transaction = transaction;
 	}
 
 	public void setProductIMG(String productIMG) {

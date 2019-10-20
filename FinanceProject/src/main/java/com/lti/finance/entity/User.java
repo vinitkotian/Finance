@@ -1,6 +1,7 @@
 package com.lti.finance.entity;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -31,10 +32,10 @@ public class User {
 	private String userName;
 
 	@Column(name = "DOB")
-	private LocalDate dob;
+	private Date dob;
 
 	@Column(name = "PHONENO")
-	private int phoneNo;
+	private long phoneNo;
 
 	@Column(name = "EMAIL")
 	private String email;
@@ -49,13 +50,15 @@ public class User {
 	private String bankName;
 
 	@Column(name = "ACCOUNTNO")
-	private int accountNo;
+	private long accountNo;
 
 	@Column(name = "USER_IFSC")
 	private String ifsc;
 
 	@Column(name = "REGISTRATION_DATE")
 	private LocalDate activationDate;
+	
+	
 
 	@OneToOne(mappedBy="user", cascade=CascadeType.REMOVE)
 	private EmiCard emiCard;
@@ -95,19 +98,22 @@ public class User {
 		this.userName = userName;
 	}
 
-	public int getPhoneNo() {
+	
+	
+
+	public long getPhoneNo() {
 		return phoneNo;
 	}
 
-	public void setPhoneNo(int phoneNo) {
+	public void setPhoneNo(long phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 
-	public LocalDate getDob() {
+	public Date getDob() {
 		return dob;
 	}
 
-	public void setDob(LocalDate dob) {
+	public void setDob(Date dob) {
 		this.dob = dob;
 	}
 
@@ -143,11 +149,13 @@ public class User {
 		this.bankName = bankName;
 	}
 
-	public int getAccountNo() {
+	
+
+	public long getAccountNo() {
 		return accountNo;
 	}
 
-	public void setAccountNo(int accountNo) {
+	public void setAccountNo(long accountNo) {
 		this.accountNo = accountNo;
 	}
 

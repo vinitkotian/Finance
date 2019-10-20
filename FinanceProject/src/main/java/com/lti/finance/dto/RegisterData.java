@@ -13,9 +13,10 @@ public class RegisterData {
 	private String password;
 	private String address;
 	private String Bank;
-	private String acno;
+	private long acno;
 	private String ifsc;
 	private LocalDate regdate;
+
 	public String getFirstname() {
 		return firstname;
 	}
@@ -70,10 +71,12 @@ public class RegisterData {
 	public void setBank(String bank) {
 		Bank = bank;
 	}
-	public String getAcno() {
+	
+	
+	public long getAcno() {
 		return acno;
 	}
-	public void setAcno(String acno) {
+	public void setAcno(long acno) {
 		this.acno = acno;
 	}
 	public String getIfsc() {
@@ -88,7 +91,7 @@ public class RegisterData {
 	public void setRegdate(LocalDate regdate) {
 		this.regdate = regdate;
 	}
-	
+
 	
 	
 

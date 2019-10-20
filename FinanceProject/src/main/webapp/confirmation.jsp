@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>product added</h1>
+<h1>User added</h1>
 </body>
 </html>

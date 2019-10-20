@@ -1,6 +1,8 @@
 package com.lti.finance.entity;
 
 import java.time.LocalDateTime;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +18,7 @@ import javax.persistence.Table;
 public class Transaction {
 
 	@Id
-	@GeneratedValue()
+	@GeneratedValue
 	@Column(name = "TRANSACTION_ID")
 	private double transactionId;
 
@@ -34,11 +36,24 @@ public class Transaction {
 	@Column(name = "EMI_DURATION")
 	private LocalDateTime duration;
 
-	@Column(name = "TRANSACTION_DATE")
-	private LocalDateTime transactionDate;
+//	@Column(name = "TRANSACTION_DATE")
+//	private LocalDateTime transactionDate;
+//
+//	@Column(name = "END_DATE")
+//	private LocalDateTime endDate;
+	
+	@OneToOne(mappedBy="transaction")
+	private Emi emi;
+	
 
-	@Column(name = "END_DATE")
-	private LocalDateTime endDate;
+	
+	public Emi getEmi() {
+		return emi;
+	}
+
+	public void setEmi(Emi emi) {
+		this.emi = emi;
+	}
 
 	public double getTransactionId() {
 		return transactionId;
@@ -80,20 +95,20 @@ public class Transaction {
 		this.duration = duration;
 	}
 
-	public LocalDateTime getTransactionDate() {
-		return transactionDate;
-	}
-
-	public void setTransactionDate(LocalDateTime transactionDate) {
-		this.transactionDate = transactionDate;
-	}
-
-	public LocalDateTime getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(LocalDateTime endDate) {
-		this.endDate = endDate;
-	}
+//	public LocalDateTime getTransactionDate() {
+//		return transactionDate;
+//	}
+//
+//	public void setTransactionDate(LocalDateTime transactionDate) {
+//		this.transactionDate = transactionDate;
+//	}
+//
+//	public LocalDateTime getEndDate() {
+//		return endDate;
+//	}
+//
+//	public void setEndDate(LocalDateTime endDate) {
+//		this.endDate = endDate;
+//	}
 
 }
