@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body>  
 <form action="add.lti" method="post">
 Enter Product name:<input type="text" name="pname"/><br>
 Enter Product details:<input type="text" name="pdetails"/><br>
