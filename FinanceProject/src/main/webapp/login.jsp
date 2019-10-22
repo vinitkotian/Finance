@@ -22,7 +22,7 @@
           <div class="fadeIn first">
             <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
           </div>-->
-      
+         
           <!-- Login Form -->
           <form action="login.lti" method="post">
             <input type="text" id="login" class="fadeIn second" name="userName" placeholder="username"><br>
