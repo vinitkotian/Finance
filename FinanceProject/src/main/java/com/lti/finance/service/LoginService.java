@@ -11,17 +11,16 @@ public class LoginService {
 	@Autowired
 	private FinanceDao fdao;
 	
-	public boolean validateUser(String username,String password){
+	public User getUserNamePass(String username,String password){
 		User user = fdao.fetchByUsername(username);
-		System.out.println("fd"+user.getUserName()+""+user.getPassword());
-		
-		
-		if(password.equals(user.getPassword()) && username.equals(user.getUserName())) {
-			return true;
-		}
-		else {
-			return false;
-		}
+//		System.out.println("fd"+user.getUserName()+""+user.getPassword());
+//		if(password.equals(user.getPassword()) && username.equals(user.getUserName())) {
+//			return true;
+//		}
+//		else{
+//			return false;
+//		}
+		return user;
 		
 	
 	

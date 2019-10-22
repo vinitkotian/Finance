@@ -1,5 +1,7 @@
 package com.lti.finance.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class LoginData {
 	
 	private String userName;

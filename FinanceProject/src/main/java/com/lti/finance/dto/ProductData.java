@@ -1,11 +1,13 @@
 package com.lti.finance.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ProductData {
 	
 	private String pname;
 	private String pdetails;
 	private Double price;
-	private String pimg;
+	private MultipartFile productimg;
 	public String getPname() {
 		return pname;
 	}
@@ -24,11 +26,12 @@ public class ProductData {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public String getPimg() {
-		return pimg;
+	
+	public MultipartFile getProductimg() {
+		return productimg;
 	}
-	public void setPimg(String pimg) {
-		this.pimg = pimg;
+	public void setProductimg(MultipartFile productimg) {
+		this.productimg = productimg;
 	}
 	
 	

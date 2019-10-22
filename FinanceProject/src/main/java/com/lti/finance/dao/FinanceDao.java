@@ -15,7 +15,6 @@ public class FinanceDao{
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	
 	public User fetchByUsername(String username){
 		String query="select u from User u where u.userName=:un";
 		Query q =entityManager.createQuery(query);
@@ -23,5 +22,6 @@ public class FinanceDao{
 		//try catch for username invalid 
 		return (User)q.getSingleResult();
 	}
+	
 
 }

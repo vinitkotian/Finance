@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>  
-<form action="add.lti" method="post">
+<form action="add.lti" method="post" enctype="multipart/form-data">
 Enter Product name:<input type="text" name="pname"/><br>
 Enter Product details:<input type="text" name="pdetails"/><br>
 Enter Product price:<input type="text" name="price"/><br>
-Enter Product IMG:<input type="text" name="pimg"/><br>
+<!--  Enter Product IMG:<input type="text" name="pimg"/><br>-->
+Upload img of product : <input type="file" name="productimg" /> <br/>
 <button type="submit">add</button>
 </form>
 </body>

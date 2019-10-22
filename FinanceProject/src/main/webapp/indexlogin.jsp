@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page import="com.lti.finance.entity.User"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +9,7 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
 <link href="cssfiles\index.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
@@ -18,31 +21,35 @@
     <div id="logo">
 	<h1 style="color:#39599F">EMI Finance</h1>
     </div>
+
     <div id="menu">
       <ul>
-        <li class="current_page_item"><a href="index.jsp" accesskey="1" title="">Home</a></li>
+        <li class="current_page_item"><a href="index.html" accesskey="1" title="">Home</a></li>
 		<!--<li><a href="login.html" accesskey="2" title="">Login</a></li>-->
-		<li>
-				<div class="dropdown">
-						<a href="#login" accesskey="2" title="" >Login</a>
+		<!-- <li>
+				 <div class="dropdown">
+						<a href="login.html" accesskey="2" title="" >Login</a>
 						<div class="dropdown-content">
-						  <a href="login.jsp">As user</a>
-						  <a href="login.jsp">As admin</a>
+						  <a href="login.html">As user</a>
+						  <a href="login.html">As admin</a>
 						</div>
 					  </div>
 		</li>
-        <li><a href="signup.jsp" accesskey="3" title="">Sign Up</a></li>
-        <li><a href="productlist.jsp" accesskey="4" title="">Products</a></li>
-        
-      </ul>
-    </div>
+        <li><a href="signup.html" accesskey="3" title="">Sign Up</a></li>-->
+		<li><a href="productlistlogin.jsp" accesskey="4" title="">Products</a></li>
+		<li><a href="productlist.jsp" accesskey="4" title="">Dashboard</a></li>
+		<li><a href="index.jsp" accesskey="4" title="">Logout</a></li>
+		      <p style="font-size:1.5em;  ">Hello ${user.firstName} ${user.lastName} !!</p>
+      
+	</div>
+	
   </div>
+
 </div>
 
 
 <div id="header-featured"> 
 	<!--background image in css-->
-	
 </div>
 
 <div id="wrapper">
@@ -70,7 +77,7 @@
 		<div class="tbox1">
 			<div class="padding-bottom">
 				<h2>IPhone Xs</h2>
-				<a href="productlist.jsp"><img src="images/iphone.jpg"/></a>
+				<a href="productlistlogin.jsp"><img src="images/iphone.jpg"/></a>
 				<!--<button onClick="return productList()"><img src="images/iphone.jpg" /></button>-->
 				<!--<img src="images/iphone.jpg" alt="" onclick="return productList()"/>-->
 			</div>
@@ -79,7 +86,7 @@
 		<div class="tbox2">
 			<div class="padding-bottom">
 				<h2>Mi Band 3</h2>
-				<a href="productlist.jsp"><img src="images/miband.jpg"/></a>
+				<a href="productlistlogin.jsp"><img src="images/miband.jpg"/></a>
 				<!--<img src="images/miband.jpg" alt="" />-->
 			</div>
 		</div>
@@ -87,7 +94,7 @@
 		<div class="tbox3">
 			<div class="padding-bottom">
 				<h2>HP Laptop</h2>
-				<a href="productlist.jsp"><img src="images/laptop1.jpg"/></a>
+				<a href="productlistlogin.jsp"><img src="images/laptop1.jpg"/></a>
 				<!--<img src="images/laptop1.jpg" alt="" />-->
 			</div>
 		</div>

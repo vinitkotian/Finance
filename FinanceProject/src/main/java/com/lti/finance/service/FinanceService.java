@@ -24,8 +24,9 @@ public class FinanceService {
 		dao.upsert(user);
 	}
 	
-	public boolean validateUser(String username,String password){
+	public boolean validateUser(String username,String password) {
 		User user = (User)fdao.fetchByUsername(username);
+		
 		if(password.equals(user.getPassword()))
 			return true;
 		else
