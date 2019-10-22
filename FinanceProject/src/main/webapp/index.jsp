@@ -1,0 +1,130 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="cssfiles\index.css" rel="stylesheet" type="text/css" media="all" />
+<link href="cssfiles\fonts.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+
+
+<div id="header-wrapper" >
+  <div id="header" class="container">
+    <div id="logo">
+	<h1 style="color:#39599F">EMI Finance</h1>
+    </div>
+    <div id="menu">
+      <ul>
+        <li class="current_page_item"><a href="index.html" accesskey="1" title="">Home</a></li>
+		<!--<li><a href="login.html" accesskey="2" title="">Login</a></li>-->
+		<li>
+				<div class="dropdown">
+						<a href="login.html" accesskey="2" title="" >Login</a>
+						<div class="dropdown-content">
+						  <a href="login.jsp">As user</a>
+						  <a href="login.html">As admin</a>
+						</div>
+					  </div>
+		</li>
+        <li><a href="signup.jsp" accesskey="3" title="">Sign Up</a></li>
+        <li><a href="productlist.html" accesskey="4" title="">Products</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div id="header-featured"> 
+	<!--background image in css-->
+	
+</div>
+
+<div id="wrapper">
+   
+   <div id="extra1" class="container">
+		<div class="title">
+			<h2>Welcome to our website</h2>
+		</div>
+		<p><b>
+	    <center>
+				EMI Financial Services, a part of ABC Holdings & Investments
+				Limited, is an Indian financial services company focused on lending, asset management, wealth management and insurance
+				We provide benefits of buying products with no cost EMI.
+		</center>
+		</b></p>
+	
+	</div>
+
+<div id="page-wrapper">
+	<div id="extra2" class="contain">
+		<div class="title">
+			<h2>Products</h2>
+		</div>
+
+		<div class="tbox1">
+			<div class="padding-bottom">
+				<h2>IPhone Xs</h2>
+				<a href="productlist.html"><img src="images/iphone.jpg"/></a>
+				<!--<button onClick="return productList()"><img src="images/iphone.jpg" /></button>-->
+				<!--<img src="images/iphone.jpg" alt="" onclick="return productList()"/>-->
+			</div>
+		</div>
+
+		<div class="tbox2">
+			<div class="padding-bottom">
+				<h2>Mi Band 3</h2>
+				<a href="productlist.html"><img src="images/miband.jpg"/></a>
+				<!--<img src="images/miband.jpg" alt="" />-->
+			</div>
+		</div>
+
+		<div class="tbox3">
+			<div class="padding-bottom">
+				<h2>HP Laptop</h2>
+				<a href="productlist.html"><img src="images/laptop1.jpg"/></a>
+				<!--<img src="images/laptop1.jpg" alt="" />-->
+			</div>
+		</div>
+	</div>
+	<marquee direction="right" style="font-size:2em;"><em>EMI starting at Rs.5,000 onwards.Terms and Conditions applied.</em></marquee>
+</div>
+
+<div id="footer">
+	<div class="container">
+		<div class="fbox1">
+		<span class="icon icon-map-marker"></span>
+			<span>Corporate office : 4th Floor,Emi Financial Services
+			<br />Corporate Office, Off Pune-Ahmednagar Road, Viman Nagar, Pune – 411014</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-phone"></span>
+			<span>
+				Telephone : +91 0869805060
+			</span>
+		</div>
+		<div class="fbox1">
+			<span class="icon icon-envelope"></span>
+			<span>Email : wecare@emifinservices.</span>
+		</div>
+	</div>
+</div>
+
+
+<div id="copyright">
+	<p>&copy;  EMI Financial Services Limited. | Designed and Handcrafted by GET 786 </p>
+	<ul class="contact">
+		<li><a href="www.twitter.com/" class="icon icon-twitter"><span>Twitter</span></a></li>
+		<li><a href="www.facebook.com/" class="icon icon-facebook"><span></span></a></li>
+		<li><a href="www.pininterest.com" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+		<li><a href="www.google.com" class="icon icon-tumblr"><span>Google+</span></a></li>
+		<li><a href="www.linkedn.com" class="icon icon-rss"><span>Pinterest</span></a></li>
+	</ul>
+</div>
+
+</body>
+</html>

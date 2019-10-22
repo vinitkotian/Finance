@@ -19,10 +19,9 @@ public class RegisterController {
 	private FinanceService fs;
 	
 	@RequestMapping(path="/register.lti", method=RequestMethod.POST)
-	
 	public String register(RegisterData data,Map model){
 		User user = new User();
-		user.setAccountNo(data.getAcno());
+		
 		user.setFirstName(data.getFirstname());
 		user.setLastName(data.getLastname());
 		user.setUserName(data.getUsername());
@@ -30,11 +29,14 @@ public class RegisterController {
 		user.setPhoneNo(data.getPhoneno());
 		user.setEmail(data.getEmail());
 		user.setPassword(data.getPassword());
+		user.setAddress(data.getAddress());
 		user.setBankName(data.getBank());
+		user.setAccountNo(data.getAcno());
 		user.setIfsc(data.getIfsc());
+		System.out.println(data.getIfsc());
 		user.setActivationDate(LocalDate.now());
-		
-		fs.register(user);
+		System.out.println(LocalDate.now());
+		fs.registerUser(user);
 		return "confirmation.jsp";
 	}
 }

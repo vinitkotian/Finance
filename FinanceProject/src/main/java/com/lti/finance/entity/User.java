@@ -7,10 +7,13 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -18,7 +21,8 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="s1")
+	@SequenceGenerator(name="s1",sequenceName="user_seq",allocationSize=1)
 	@Column(name = "USER_ID")
 	private int userId;
 
@@ -60,10 +64,10 @@ public class User {
 	
 	
 
-	@OneToOne(mappedBy="user", cascade=CascadeType.REMOVE)
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private EmiCard emiCard;
 
-	@OneToMany(mappedBy="user" , cascade=CascadeType.REMOVE)
+	@OneToMany(mappedBy="user" , cascade=CascadeType.ALL)
 	private Set<Transaction> transaction;
 
 	public int getUserId() {

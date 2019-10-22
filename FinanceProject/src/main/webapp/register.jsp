@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<from method="post" action="register.lti">
-first name<input type="text" name="firstname"/><br><br>
+<form action="register.lti" method="post">
+<!--  first name<input type="text" name="firstname"/><br><br>
 last name<input type="text" name ="lastname"/><br><br>
 user name<input type="text" name ="username"/><br>
-dob<input type="date" name ="DOB"/><br><br>
+dob<input type="text" name ="DOB"/><br><br>
 phoneno<input type="text" name ="phoneno"/><br><br>
 email<input type="text" name ="email"/><br><br>
 password<input type="text" name ="password"/><br><br>
@@ -21,6 +21,6 @@ acno<input type="text" name ="acno"/><br><br>
 ifsc<input type="text" name ="ifsc"/><br><br>
 <!--  regdate<input type="date" name ="regdate"/><br><br>-->
 <button type = "submit">register</button>
-</from>
+</form>
 </body>
 </html>

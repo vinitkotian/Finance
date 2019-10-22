@@ -20,7 +20,7 @@ public class EmiCard {
 	private int cardNo;
 	
 	@Column(name="CARD_TYPE")
-	private Type cardType;
+	private String cardType;
 	
 	@Column(name="CARD_LIMIT")
 	private double cardLimit;
@@ -35,7 +35,7 @@ public class EmiCard {
 	private double creditUsed;
 	
 	@Column(name="CARD_STATUS")
-	private Status cardstatus;
+	private String cardstatus;
 	
 	@OneToOne
 	@JoinColumn(name="User_Id")
@@ -57,11 +57,13 @@ public class EmiCard {
 		this.cardNo = cardNo;
 	}
 
-	public Type getCardType() {
+	
+
+	public String getCardType() {
 		return cardType;
 	}
 
-	public void setCardType(Type cardType) {
+	public void setCardType(String cardType) {
 		this.cardType = cardType;
 	}
 
@@ -97,11 +99,13 @@ public class EmiCard {
 		this.creditUsed = creditUsed;
 	}
 
-	public Status getCardstatus() {
+	
+
+	public String getCardstatus() {
 		return cardstatus;
 	}
 
-	public void setCardstatus(Status cardstatus) {
+	public void setCardstatus(String cardstatus) {
 		this.cardstatus = cardstatus;
 	}
 
