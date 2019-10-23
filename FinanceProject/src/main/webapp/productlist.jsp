@@ -42,7 +42,6 @@
        
         
          <div class="product">  
-              
             <img src="images/iphone.jpg" id="iphone" style="width:15em; height:15em;" ><br><br><br><br><br><br><br><br><br>
             <img src="images/miband.jpg" id="miband" style="width:15em; height:15em;" ><br><br><br><br><br><br><br><br><br><br><br><br>
            <img src="images/laptop1.jpg" id="laptop" style="width:13em; height:10em;" ><br><br><br><br><br><br><br><br>        

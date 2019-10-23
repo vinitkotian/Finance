@@ -1,5 +1,7 @@
 package com.lti.finance.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +34,10 @@ public class FinanceService {
 		else
 			return false;
 	
+	}
+	
+	public List<Product>fetchAllProduct(){
+		List<Product> Products = fdao.fetchAllProduct();
+		return Products;
 	}
 }

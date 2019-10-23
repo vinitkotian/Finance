@@ -2,18 +2,25 @@ package com.lti.finance.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.finance.dto.ProductData;
 import com.lti.finance.entity.Product;
 import com.lti.finance.service.FinanceService;
 
 @Controller
+@SessionAttributes("product")
 public class ProductController {
 	
 	@Autowired
@@ -36,7 +43,7 @@ public class ProductController {
 		product.setProductName(data.getPname());
 		product.setProductDetails(data.getPdetails());
 		product.setProductPrice(data.getPrice());
-		product.setProductIMG(finalpath);
+		product.setProductIMG(filename);
 		System.out.println(product.getProductName());
 		
 	
@@ -44,4 +51,37 @@ public class ProductController {
 		return "confirmation.jsp";
 	
 }
+	
+	
+	@RequestMapping(path="/getProduct.lti", method=RequestMethod.GET)
+	public String fetchProduct(HttpServletRequest request, Map model) {
+		String projpath = request.getServletContext().getRealPath("/");
+		
+		File projectUploadsFolder = new File(projpath + "uploads");
+		if(!projectUploadsFolder.exists())
+			projectUploadsFolder.mkdir();
+		
+		String uploadsFolder = "d:/uploads/";
+		String projFolder = projpath + "uploads/";
+		
+		List<Product> products=fs.fetchAllProduct();
+		for(Product product : products) {
+			 try {
+				FileCopyUtils.copy(new File(uploadsFolder + product.getProductIMG()), new File(projFolder + product.getProductIMG()));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		model.put("products", products);
+//		for(Product p : products) {
+//			System.out.println(p.getProductName());
+//		}
+		
+		
+		return "productlistlogin.jsp";
+	
+}
+	
+	
 }
