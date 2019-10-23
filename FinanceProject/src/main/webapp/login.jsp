@@ -28,7 +28,9 @@
             <input type="text" id="login" class="fadeIn second" name="userName" placeholder="username"><br>
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="password"><br>
             <input type="submit" class="fadeIn fourth" value="Log In"><br>
+            <h1>${invalidUser}</h1>
           </form>
+      
       
           <!-- Remind Passowrd -->
           <div id="formFooter">

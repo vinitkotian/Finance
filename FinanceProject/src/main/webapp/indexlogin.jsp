@@ -24,7 +24,7 @@
 
     <div id="menu">
       <ul>
-        <li class="current_page_item"><a href="index.html" accesskey="1" title="">Home</a></li>
+        <li class="current_page_item"><a href="indexlogin.jsp" accesskey="1" title="">Home</a></li>
 		<!--<li><a href="login.html" accesskey="2" title="">Login</a></li>-->
 		<!-- <li>
 				 <div class="dropdown">

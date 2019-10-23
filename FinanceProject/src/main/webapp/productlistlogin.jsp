@@ -33,7 +33,7 @@
 		<li><a href="index.jsp" accesskey="4" title="">Logout</a></li>
         </ul>
       </div>
-    </div>
+    </div> <!--  onclick="location.href='buyProduct.lti'" -->
   </div>
 
 <div style="background-color:aliceblue">
@@ -42,7 +42,7 @@
             Hii Username 
             <button type="submit" style="width:90px; height: 40px;">Logout</button>
         </div>-->
-       
+       <form action="buyProduct.lti" method="get">
         <c:forEach var="products" items="${products}">
          <div class="product">  
             <img src="uploads/${products.productIMG}" id="iphone" style="width:15em; height:15em;" >
@@ -54,12 +54,12 @@
               <li>${products.productDetails}</li>
             </ul>
             <p class="price">Rs. ${products.productPrice}</p>
-            <p><button type="submit"  onclick="location.href='product-inst-phone.html" name=${products.productId} >Buy now</button></p>
+            <p><button type="submit" name="pname" value=${products.productId} >Buy now</button></p>
             <hr/>
   </div>
     </c:forEach>
     
-    
+    </form>
     
     
     

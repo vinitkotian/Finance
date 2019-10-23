@@ -3,6 +3,7 @@ package com.lti.finance.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lti.finance.Exception.DataNotFoundException;
 import com.lti.finance.dao.FinanceDao;
 import com.lti.finance.entity.User;
 
@@ -11,8 +12,13 @@ public class LoginService {
 	@Autowired
 	private FinanceDao fdao;
 	
-	public User getUserNamePass(String username,String password){
+	public User getUserNamePass(String username,String password)throws DataNotFoundException{
+		try {
 		User user = fdao.fetchByUsername(username);
+		return user;
+		}catch(Exception e){
+			return null;
+		}
 //		System.out.println("fd"+user.getUserName()+""+user.getPassword());
 //		if(password.equals(user.getPassword()) && username.equals(user.getUserName())) {
 //			return true;
@@ -20,7 +26,7 @@ public class LoginService {
 //		else{
 //			return false;
 //		}
-		return user;
+		
 		
 	
 	

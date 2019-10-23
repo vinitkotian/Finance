@@ -32,7 +32,7 @@
 					  </div>
 		</li>
         <li><a href="signup.jsp" accesskey="3" title="">Sign Up</a></li>
-        <li><a href="productlist.jsp" accesskey="4" title="">Products</a></li>
+        <li><a href="getProduct.lti" accesskey="4" title="">Products</a></li>
         
       </ul>
     </div>

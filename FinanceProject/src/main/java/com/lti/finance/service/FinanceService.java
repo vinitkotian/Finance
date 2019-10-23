@@ -26,15 +26,21 @@ public class FinanceService {
 		dao.upsert(user);
 	}
 	
-	public boolean validateUser(String username,String password) {
-		User user = (User)fdao.fetchByUsername(username);
+	public Product fetchProductById(int id) {
+		Product product = (Product) dao.fetchById(Product.class, id);
 		
-		if(password.equals(user.getPassword()))
-			return true;
-		else
-			return false;
-	
+		return product;
 	}
+	
+//	public boolean validateUser(String username,String password) {
+//		User user = (User)fdao.fetchByUsername(username);
+//		
+//		if(password.equals(user.getPassword()))
+//			return true;
+//		else
+//			return false;
+//	
+//	}
 	
 	public List<Product>fetchAllProduct(){
 		List<Product> Products = fdao.fetchAllProduct();
