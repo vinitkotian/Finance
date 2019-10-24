@@ -3,7 +3,7 @@
 /* BASIC */
 
 html {
-  background:url("login1.jpg");
+  background:url(login1.jpg);
 }
 
 body {
@@ -75,7 +75,7 @@ h2.inactive {
 
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid rgb(61, 74, 116);
 }
 
 
@@ -83,7 +83,7 @@ h2.active {
 /* FORM TYPOGRAPHY*/
 /* INPUT BUTTON*/
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  background-color: rgb(61, 74, 116);
   border: none;
   color: white;
   padding: 15px 80px;
@@ -105,7 +105,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7;
+  background-color: rgb(123, 135, 173);
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -139,7 +139,7 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid rgb(61, 74, 116);
 }
 
 input[type=text]:placeholder {
@@ -170,7 +170,7 @@ input[type=password] {
 
 input[type=password]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid rgb(61, 74, 116);
 }
 
 input[type=password]:placeholder {
@@ -201,7 +201,7 @@ input[type=number] {
 
 input[type=number]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid rgb(61, 74, 116);
 }
 
 input[type=number]:placeholder {
@@ -296,7 +296,7 @@ input[type=number]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: rgb(61, 74, 116);;
   content: "";
   transition: width 0.2s;
 }
@@ -325,3 +325,92 @@ input[type=number]:placeholder {
   box-sizing: border-box;
 }
 
+
+  /*********************************************************************************/
+  /* Header                                                                        */
+  /*********************************************************************************/
+    
+  #header-wrapper
+  {	
+    
+    padding: 0.5em 0em;
+    background: rgb(61, 74, 116);
+  }
+  
+  #header
+  {
+    position: fixed;
+    position: relative;
+    height: 91px;
+  }
+  
+  /*********************************************************************************/
+  /* Logo                                                                          */
+  /*********************************************************************************/
+  
+  #logo
+  {	
+    position:absolute;
+    top: 0.1em;
+    left: 0 em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.1em;
+    color: #39599F;
+  }
+  
+  .container
+  {
+    
+    margin: 0px auto;
+    width: 1200px;
+  }
+  
+  /*********************************************************************************/
+  /* Menu                                                                          */
+  /*********************************************************************************/
+  
+  #menu
+  {
+    position:absolute;
+    right: 0;
+    top: 0em;
+  }
+  
+  #menu ul
+  {
+    display: inline-block;
+  }
+  
+  #menu li
+  {
+    display: block;
+    float: left;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  #menu li a, #menu li span
+  {
+    display: inline-block;
+    margin-left: 1px;
+    padding: 0em 1.5em;
+    letter-spacing: 0.10em;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    outline: 0;
+    color: white;
+  }
+  
+  #menu li:hover a
+  {
+    background: rgb(123, 135, 173);
+    color: #FFF !important;
+  }
+  
+  
+  #menu li.current_page_item a
+  {
+    background: white;
+    color: black !important;
+  }

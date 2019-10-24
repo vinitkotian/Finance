@@ -7,7 +7,7 @@ public class RegisterData {
 	private String firstname;
 	private String lastname;
 	private String username;
-	private Date DOB;
+	private String DOB;
 	private long phoneno;
 	private String email;
 	private String password;
@@ -16,7 +16,8 @@ public class RegisterData {
 	private long acno;
 	private String ifsc;
 	private LocalDate regdate;
-
+	private String cardType;
+	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -35,10 +36,12 @@ public class RegisterData {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public Date getDOB() {
+
+	
+	public String getDOB() {
 		return DOB;
 	}
-	public void setDOB(Date dOB) {
+	public void setDOB(String dOB) {
 		DOB = dOB;
 	}
 	public long getPhoneno() {
@@ -90,6 +93,12 @@ public class RegisterData {
 	}
 	public void setRegdate(LocalDate regdate) {
 		this.regdate = regdate;
+	}
+	public String getCardType() {
+		return cardType;
+	}
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
 	}
 
 	

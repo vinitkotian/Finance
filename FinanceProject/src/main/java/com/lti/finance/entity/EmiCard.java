@@ -4,20 +4,22 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="EMICARD")
 public class EmiCard {
 	
-
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="s1")
+	@SequenceGenerator(name="s1",sequenceName="emiCardNo__seq1",allocationSize=442316984)
 	@Column(name="CARD_NO")
-	private int cardNo;
+	private long cardNo;
 	
 	@Column(name="CARD_TYPE")
 	private String cardType;
@@ -41,23 +43,13 @@ public class EmiCard {
 	@JoinColumn(name="User_Id")
 	private User user;
 	
-	public static enum Type{
-		Titatium,Gold
-	}
-	
-	public static enum Status{
-		Active,NotActive
-	}
-
-	public int getCardNo() {
+	public long getCardNo() {
 		return cardNo;
 	}
 
-	public void setCardNo(int cardNo) {
+	public void setCardNo(long cardNo) {
 		this.cardNo = cardNo;
 	}
-
-	
 
 	public String getCardType() {
 		return cardType;

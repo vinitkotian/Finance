@@ -26,8 +26,8 @@
 				<div class="dropdown">
 						<a href="#login" accesskey="2" title="" >Login</a>
 						<div class="dropdown-content">
-						  <a href="login.jsp">As user</a>
-						  <a href="login.jsp">As admin</a>
+						  <a href="login.jsp">As user</a><!-- pass through controller -->
+						  <a href="adminlogin.lti">As admin</a>
 						</div>
 					  </div>
 		</li>

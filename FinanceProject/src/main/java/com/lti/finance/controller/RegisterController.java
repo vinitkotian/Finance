@@ -1,5 +1,6 @@
 package com.lti.finance.controller;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lti.finance.dto.RegisterData;
+import com.lti.finance.entity.EmiCard;
 import com.lti.finance.entity.User;
+import com.lti.finance.service.CardService;
 import com.lti.finance.service.FinanceService;
 
 
@@ -17,15 +20,18 @@ public class RegisterController {
 
 	@Autowired
 	private FinanceService fs;
+
+	
+	@Autowired
+	private CardService cardService;
 	
 	@RequestMapping(path="/register.lti", method=RequestMethod.POST)
 	public String register(RegisterData data,Map model){
 		User user = new User();
-		
 		user.setFirstName(data.getFirstname());
 		user.setLastName(data.getLastname());
 		user.setUserName(data.getUsername());
-		user.setDob(data.getDOB());
+		user.setDob(LocalDate.parse(data.getDOB()));
 		user.setPhoneNo(data.getPhoneno());
 		user.setEmail(data.getEmail());
 		user.setPassword(data.getPassword());
@@ -33,9 +39,19 @@ public class RegisterController {
 		user.setBankName(data.getBank());
 		user.setAccountNo(data.getAcno());
 		user.setIfsc(data.getIfsc());
-		System.out.println(data.getIfsc());
+		//System.out.println(data.getIfsc());
 		user.setActivationDate(LocalDate.now());
-		System.out.println(LocalDate.now());
+		//System.out.println(LocalDate.now());
+		System.out.println(data.getCardType());
+		EmiCard emiCard = new EmiCard();
+		emiCard.setCardLimit(cardService.checkCardType(data.getCardType()));
+		emiCard.setActivationDate(LocalDate.now());
+		emiCard.setCardType(data.getCardType());
+		emiCard.setExpiryDate(LocalDate.now().plusYears(4));
+		emiCard.setCardstatus("inactive");
+		emiCard.setCreditUsed(0);
+		emiCard.setUser(user);
+		user.setEmiCard(emiCard);
 		fs.registerUser(user);
 		return "confirmation.jsp";
 	}

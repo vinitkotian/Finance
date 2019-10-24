@@ -36,7 +36,7 @@ public class User {
 	private String userName;
 
 	@Column(name = "DOB")
-	private Date dob;
+	private LocalDate dob;
 
 	@Column(name = "PHONENO")
 	private long phoneNo;
@@ -113,11 +113,11 @@ public class User {
 		this.phoneNo = phoneNo;
 	}
 
-	public Date getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(Date dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 

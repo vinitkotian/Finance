@@ -13,16 +13,11 @@
     <div class="wrapper fadeInDown">
         <div id="formContent">
           <!-- Tabs Titles -->
-          <h2 class="active"> Log In as User </h2>
+          <h2 class="active"> Log In as Admin </h2>
           <!-- Icon  <h2 class="inactive underlineHover"><a href="signup.html">Register</a></h2> -->
           <br><br>
-          <!-- Icon 
-          <div class="fadeIn first">
-            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-          </div>-->
-         
           <!-- Login Form -->
-          <form action="login.lti" method="post">
+          <form action="adminverify.lti" method="post">
             <input type="text" id="login" class="fadeIn second" name="userName" placeholder="username"><br>
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="password"><br>
             <input type="submit" class="fadeIn fourth" value="Log In"><br>
