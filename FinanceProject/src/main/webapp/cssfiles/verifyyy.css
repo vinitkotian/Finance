@@ -91,7 +91,7 @@
     top:45em;
     margin:auto;
     padding-top: 85px;
-  padding-left: 280px;
+  padding-left: 40px;
 }
 table, th, td {
   border: 1px solid black;
@@ -184,7 +184,7 @@ th, td {
     background-color: rgb(61, 74, 116);
     border: none;
     color: white;
-    padding: 10px 50px;
+    padding: 8px 11px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -194,12 +194,8 @@ th, td {
     box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
-    margin: 5px 20px 40px 20px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    margin:1px 6px 3px 7px;
+
     }
     
     button:hover{

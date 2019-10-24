@@ -62,9 +62,7 @@ public class User {
 	@Column(name = "REGISTRATION_DATE")
 	private LocalDate activationDate;
 	
-	
-
-	@OneToOne(mappedBy="user", cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
 	private EmiCard emiCard;
 
 	@OneToMany(mappedBy="user" , cascade=CascadeType.ALL)

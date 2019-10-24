@@ -15,38 +15,25 @@ import com.lti.finance.entity.User;
 public class FinanceService {
 	
 	@Autowired
-	private GenericDao dao;
+	private GenericDao genericDao;
 	@Autowired
-	private FinanceDao fdao;
+	private FinanceDao financeDao;
 	
 	public void addProduct(Product product) {
-		dao.upsert(product);
+		genericDao.upsert(product);
 	}
 	
 	public void registerUser(User user) {
-		dao.upsert(user);
+		genericDao.upsert(user);
 	}
-	
-	
-	
-	
+
 	public Product fetchProductById(int id) {
-		Product product = (Product) dao.fetchById(Product.class, id);	
+		Product product = (Product) genericDao.fetchById(Product.class, id);	
 		return product;
 	}
-	
-//	public boolean validateUser(String username,String password) {
-//		User user = (User)fdao.fetchByUsername(username);
-//		
-//		if(password.equals(user.getPassword()))
-//			return true;
-//		else
-//			return false;
-//	
-//	}
-	
+
 	public List<Product>fetchAllProduct(){
-		List<Product> Products = fdao.fetchAllProduct();
+		List<Product> Products = financeDao.fetchAllProduct();
 		return Products;
 	}
 }

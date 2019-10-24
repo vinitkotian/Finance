@@ -11,8 +11,6 @@
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-
-
 <div id="header-wrapper" >
   <div id="header" class="container">
     <div id="logo">

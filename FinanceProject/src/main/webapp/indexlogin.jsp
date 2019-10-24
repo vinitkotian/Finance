@@ -37,7 +37,7 @@
 		</li>
         <li><a href="signup.html" accesskey="3" title="">Sign Up</a></li>-->
 		<li><a href="getProduct.lti" accesskey="4" title="">Products</a></li>
-		<li><a href="productlist.jsp" accesskey="4" title="">Dashboard</a></li>
+		<li><a href="dashboard.lti" accesskey="4" title="">Dashboard</a></li>
 		<li><a href="index.jsp" accesskey="4" title="">Logout</a></li>
 		 <p style="font-size:1.5em;  ">Hello ${user.firstName} ${user.lastName} !!</p>
       

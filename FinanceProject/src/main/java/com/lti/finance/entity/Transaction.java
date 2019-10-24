@@ -33,8 +33,7 @@ public class Transaction {
 	@Column(name = "EMI_SCHEME")
 	private String scheme;
 
-	@Column(name = "EMI_DURATION")
-	private LocalDateTime duration;
+	
 
 //	@Column(name = "TRANSACTION_DATE")
 //	private LocalDateTime transactionDate;
@@ -87,13 +86,7 @@ public class Transaction {
 		this.scheme = scheme;
 	}
 
-	public LocalDateTime getDuration() {
-		return duration;
-	}
 
-	public void setDuration(LocalDateTime duration) {
-		this.duration = duration;
-	}
 
 //	public LocalDateTime getTransactionDate() {
 //		return transactionDate;
