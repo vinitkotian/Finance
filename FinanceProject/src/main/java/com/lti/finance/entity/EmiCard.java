@@ -16,8 +16,8 @@ import javax.persistence.Table;
 public class EmiCard {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="s1")
-	@SequenceGenerator(name="s1",sequenceName="emiCardNo__seq1",allocationSize=442316984)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="s2")
+	@SequenceGenerator(name="s2",sequenceName="emiCardNo__seq1",allocationSize=442316984)
 	@Column(name="CARD_NO")
 	private long cardNo;
 	

@@ -5,9 +5,11 @@ import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +17,11 @@ import javax.persistence.Table;
 public class Installment {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="s4")
+	@SequenceGenerator(name="s4",sequenceName="installment_seq",allocationSize=1)
+	@Column(name="INSTALLMENT_ID")
+	private int installmentId;
+	
 	@Column(name="INSTALLMENT_NO")
 	private int installmentNo;
 	
@@ -61,4 +67,13 @@ public class Installment {
 		this.emi = emi;
 	}
 
+	public int getInstallmentId() {
+		return installmentId;
+	}
+
+	public void setInstallmentId(int installmentId) {
+		this.installmentId = installmentId;
+	}
+
+	
 }

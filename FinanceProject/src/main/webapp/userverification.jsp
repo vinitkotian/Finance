@@ -68,7 +68,7 @@
                                         <input type="radio" name="status" value="0"> DEACTIVATE<br>--> 
                                           <input type= "hidden" name="emiuserid" value="${emiCardUser.userId}"/>
                                         <button type="submit" name="cardStatus"  value="1" > ACTIVATE</button> 
-                                        <button type="submit" name="cardStatus"  value="0" >DEACTIVATE</button>
+                                        <button type="submit" name="cardStatus"  value="0"   >DEACTIVATE</button>
                                                             
                                 </form>
                             </td>

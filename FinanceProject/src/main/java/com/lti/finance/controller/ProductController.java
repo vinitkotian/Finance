@@ -88,7 +88,7 @@ public class ProductController {
 		}
 	
 	@RequestMapping(path="/buyProduct.lti", method=RequestMethod.GET)
-	public String buyProductButton(HttpServletRequest request, Map model,@RequestParam("pname") int value) {
+	public String buyProductButton(HttpServletRequest request, Map model,@RequestParam("productId") int value) {
 			System.out.println(value);
 			
 			String projpath = request.getServletContext().getRealPath("/");
@@ -100,6 +100,7 @@ public class ProductController {
 			String uploadsFolder = "d:/uploads/";
 			String projFolder = projpath + "uploads/";
 			Product product=fs.fetchProductById(value);
+	
 			 try {
 					FileCopyUtils.copy(new File(uploadsFolder + product.getProductIMG()), new File(projFolder + product.getProductIMG()));
 				} catch (IOException e) {

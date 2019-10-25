@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.lti.finance.dao.FinanceDao;
 import com.lti.finance.dao.GenericDao;
+import com.lti.finance.dao.ProductDao;
 import com.lti.finance.entity.EmiCard;
 import com.lti.finance.entity.Product;
 import com.lti.finance.entity.User;
@@ -17,7 +18,7 @@ public class FinanceService {
 	@Autowired
 	private GenericDao genericDao;
 	@Autowired
-	private FinanceDao financeDao;
+	private ProductDao productDao;
 	
 	public void addProduct(Product product) {
 		genericDao.upsert(product);
@@ -33,7 +34,7 @@ public class FinanceService {
 	}
 
 	public List<Product>fetchAllProduct(){
-		List<Product> Products = financeDao.fetchAllProduct();
+		List<Product> Products = productDao.fetchAllProduct();
 		return Products;
 	}
 }

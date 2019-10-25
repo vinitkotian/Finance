@@ -99,34 +99,37 @@
 
             <!--3 months table-->
             <div class="myDiv" id="a" style="display:none">
+            <form action="buyNow.lti"  method="post" >
             <table style="width:50%">
               <tr>
                 <th>EMI Plan</th>
                 <th>Per month</th>
                 <th>Total cost</th>
               </tr>
+              
               <tr>
-                <td>3 Months</td>
+                <td><input type="radio" name="emiScheme" value=3>3 Months</td>
                 <td><fmt:formatNumber type = "number" maxFractionDigits = "2" value = "${product.productPrice/3}"/></td>
                 <td>${product.productPrice}</td>
               </tr>
               <tr>
-                <td>6 Months</td>
+                <td><input type="radio" name="emiScheme" value=6>6 Months</td>
                 <td><fmt:formatNumber type = "number" maxFractionDigits = "2" value = "${product.productPrice/3}"/></td>
                 <td>${product.productPrice}</td>
               </tr>
               <tr>
-                <td>9 Months</td>
+                <td><input type="radio" name="emiScheme" value=9>9 Months</td>
                 <td><fmt:formatNumber type = "number" maxFractionDigits = "2" value = "${product.productPrice/9}"/></td>
                 <td>${product.productPrice}</td>
               </tr>
               <tr>
-                <td>12 Months</td>
+                <td><input type="radio" name="emiScheme" value=12>12 Months</td>
                 <td><fmt:formatNumber type = "number" maxFractionDigits = "2" value = "${product.productPrice/12}"/></td>
                 <td>${product.productPrice}</td>
               </tr>
             </table>
-            <p><button class="dropbtn" type="submit" onclick="location.href='payment.html'">Buy now</button></p>
+            <p><button class="dropbtn"  type="submit" >Buy now</button></p>
+            		</form>
             </div>
 
             </div>    

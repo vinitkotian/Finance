@@ -1,14 +1,16 @@
 package com.lti.finance.entity;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -19,8 +21,8 @@ public class Emi {
 	
 	@Id
 	@Column(name="EMI_NO")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="emiSeq")
-	@SequenceGenerator(name="emiSeq",allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="s3")
+	@SequenceGenerator(name="s3",sequenceName="emi_seq",allocationSize=1)
 	private int emiNo;
 	
 	@Column(name="INSTALLMENT_AMOUNT ")
@@ -36,19 +38,36 @@ public class Emi {
 	@JoinColumn(name="TRANSACTION_ID")
 	private Transaction transaction;
 	
+	@OneToMany(mappedBy="emi",cascade=CascadeType.ALL)//new
+	private Set<Installment> installment;//new
+
+	@Column(name="STATUS")
+	private  String status ;
+	
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+	public Set<Installment> getInstallment() {
+		return installment;
+	}
+
+	public void setInstallment(Set<Installment> installment) {
+		this.installment = installment;
+	}
+
+
 	public double getInstallmentAmount() {
 		return installmentAmount;
 	}
 
 	public void setInstallmentAmount(double installmentAmount) {
 		this.installmentAmount = installmentAmount;
-	}
-
-	@Column(name="STATUS")
-	private  status status ;
-	
-	enum status{
-		pending,paid;
 	}
 
 	public int getEmiNo() {
@@ -92,13 +111,7 @@ public class Emi {
 		this.transaction = transaction;
 	}
 
-	public status getStatus() {
-		return status;
-	}
 
-	public void setStatus(status status) {
-		this.status = status;
-	}
 	
 	
 	

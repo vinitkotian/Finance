@@ -11,7 +11,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
        <link rel="stylesheet" type="text/css" media="screen" href="cssfiles/dashboard.css">
+       <link rel="stylesheet" type="text/css" media="screen" href="fonts.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="javascriptfiles/activate.js"></script>
+
     </head>
     <body>
 
@@ -24,8 +27,6 @@
           <div id="menu">
             <ul>
               <li class="current_page_item"><a href="index.html" accesskey="1" title="">Home</a></li>
-              <li><a href="login.html" accesskey="2" title="">Login</a></li>
-              <li><a href="signup.html" accesskey="3" title="">Sign Up</a></li>
               <li><a href="productlist.html" accesskey="4" title="">Products</a></li>
             </ul>
           </div>
@@ -33,30 +34,31 @@
       </div>
       
       
-    <div id="outer" style="border: 2px solid black;top:35em;width:99.7%;height:130vh;" >
+    <div id="outer" style="border: 2px solid black;top:35em;width:99.7%;height:108vh;" >
         <div class="pos-center">
             <div id="logo1">
                 <h3>DASHBOARD</h3>
             </div>
         </div>
-        <c:set var="dateParts" value="${fn:split(user.emiCard.expiryDate, '-')}" />
-        
-        <div class="card container" style="top:5em;">
-            <img src="images/cardimg.png" >
+        <div style="height:19em;">
+<c:set var="dateParts" value="${fn:split(user.emiCard.expiryDate, '-')}" />
+        <div class="card container" style="top:5em;left:13em;float:left;">
+            <img id="a" src="images/cardimg.png" style="border:1px solid black;">
             <div class="pos-no"><text style="font-size:20px">${user.emiCard.cardNo}</text></div> 
-            <div class="pos-expiry"><text style="color:silver;font-size:10px" >EXPIRY :</text>${dateParts[1]}/${dateParts[0]}</div>
+            <div class="pos-expiry"><text style="color:silver;font-size:10px" >EXPIRY :${dateParts[1]}/${dateParts[0]} </div>
             <div class="pos-name">${user.firstName} ${user.lastName}</div>
             <div class="pos-cardtype">${user.emiCard.cardType}</div>  
             <div class="pos-bankname">BANK NAME</div>
         </div>
 
-      
-        <div style="padding-left:55px;padding-top:20px; font-size:18px;">
-                <p> TOTAL CREDIT:${user.emiCard.cardLimit}</p>
-                <p> CREDIT USED:${user.emiCard.creditUsed}</p>
-                <p> REMAINING CREDIT:${(user.emiCard.cardLimit)-(user.emiCard.creditUsed)}</p>
+        <div style="font-size:22px;float:right;padding-top: 4em;padding-right: 14em; font-family: cursive;">
+                <p>TOTAL CREDIT:${user.emiCard.cardLimit}</p>
+                <p>CREDIT USED:${user.emiCard.creditUsed}</p>
+                <p>REMAINING CREDIT:${(user.emiCard.cardLimit)-(user.emiCard.creditUsed)}</p>
+        </div>
         </div>
         <hr>
+
        
 
         <div class="pos-center">
@@ -72,7 +74,7 @@
                             <th>BALANCE AMT</th>   
                         </tr>
                         <tr>
-                            <td>a</td>
+                            <td></td>
                             <td>b</td>
                             <td>c</td>
                             <td>d</td>

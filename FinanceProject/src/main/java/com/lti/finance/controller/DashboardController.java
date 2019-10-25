@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.finance.dto.LoginData;
 @Controller
-@SessionAttributes("user")
+@SessionAttributes({"user"})
 public class DashboardController {
 	
 	
@@ -17,7 +17,9 @@ public class DashboardController {
 		    model.get("user");
 		    
 			return "dashboard.jsp";
-		
 	}
+	
+	
 
+	
 }

@@ -54,7 +54,7 @@
               <li>${products.productDetails}</li>
             </ul>
             <p class="price">Rs. ${products.productPrice}</p>
-            <p><button type="submit" name="pname" value=${products.productId} >Buy now</button></p>
+            <p><button type="submit" name="productId" value=${products.productId} >Buy now</button></p>
             <hr/>
   </div>
     </c:forEach>

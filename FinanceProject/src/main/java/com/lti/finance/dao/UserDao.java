@@ -14,8 +14,8 @@ import com.lti.finance.entity.User;
 
 @Repository
 public class UserDao extends GenericDao  {
-	@PersistenceContext
 	
+	@PersistenceContext
 	private EntityManager entityManager;
 	public List<User> fetchAllEmicardUser(){
 		String query="select u from User u";

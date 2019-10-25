@@ -3,14 +3,17 @@ package com.lti.finance.entity;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -18,9 +21,10 @@ import javax.persistence.Table;
 public class Transaction {
 
 	@Id
-	@GeneratedValue
 	@Column(name = "TRANSACTION_ID")
-	private double transactionId;
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="s6")
+	@SequenceGenerator(name="s6",sequenceName="transaction_seq",allocationSize=1)
+	private int transactionId;
 
 	@ManyToOne
 	@JoinColumn(name = "USER_ID")
@@ -31,7 +35,7 @@ public class Transaction {
 	private Product product;
 
 	@Column(name = "EMI_SCHEME")
-	private String scheme;
+	private int scheme;
 
 	
 
@@ -41,7 +45,7 @@ public class Transaction {
 //	@Column(name = "END_DATE")
 //	private LocalDateTime endDate;
 	
-	@OneToOne(mappedBy="transaction")
+	@OneToOne(mappedBy="transaction",cascade=CascadeType.ALL)
 	private Emi emi;
 	
 
@@ -54,11 +58,13 @@ public class Transaction {
 		this.emi = emi;
 	}
 
-	public double getTransactionId() {
+
+
+	public int getTransactionId() {
 		return transactionId;
 	}
 
-	public void setTransactionId(double transactionId) {
+	public void setTransactionId(int transactionId) {
 		this.transactionId = transactionId;
 	}
 
@@ -78,13 +84,15 @@ public class Transaction {
 		this.product = product;
 	}
 
-	public String getScheme() {
+	public int getScheme() {
 		return scheme;
 	}
 
-	public void setScheme(String scheme) {
+	public void setScheme(int scheme) {
 		this.scheme = scheme;
 	}
+
+	
 
 
 

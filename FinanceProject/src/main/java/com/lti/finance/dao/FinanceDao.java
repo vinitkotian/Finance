@@ -33,13 +33,13 @@ public class FinanceDao{
 		}
 	}
 
-	public List<Product> fetchAllProduct(){
-		String query="select p from Product p";
-		Query q =entityManager.createQuery(query);
-
-		return  q.getResultList();
-
-	}
+//	public List<Product> fetchAllProduct(){
+//		String query="select p from Product p";
+//		Query q =entityManager.createQuery(query);
+//
+//		return  q.getResultList();
+//
+//	}
 	
 	
 

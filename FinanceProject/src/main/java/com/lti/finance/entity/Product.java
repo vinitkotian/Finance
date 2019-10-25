@@ -17,8 +17,8 @@ import javax.persistence.Table;
 public class Product {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="s1" )
-	@SequenceGenerator(name="s1",sequenceName="prod_seq",allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="s5" )
+	@SequenceGenerator(name="s5",sequenceName="prod_seq",allocationSize=1)
 	@Column(name = "PRODUCT_ID")
 	private int productId;
 	
@@ -34,7 +34,7 @@ public class Product {
 	@Column(name = "PRODUCT_IMG")
 	private String productIMG;
 	
-	@OneToMany(mappedBy="product" ,cascade=CascadeType.MERGE)
+	@OneToMany(mappedBy="product" ,cascade=CascadeType.ALL)
 	private Set<Transaction> transaction;
 
 	public int getProductId() {
