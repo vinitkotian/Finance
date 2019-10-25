@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.util.*"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,20 +39,22 @@
                 <h3>DASHBOARD</h3>
             </div>
         </div>
+        <c:set var="dateParts" value="${fn:split(user.emiCard.expiryDate, '-')}" />
+        
         <div class="card container" style="top:5em;">
             <img src="images/cardimg.png" >
-            <div class="pos-no"><text style="font-size:20px">1234  1234 1234 1234</text></div> 
-            <div class="pos-expiry"><text style="color:silver;font-size:10px" >EXPIRY :</text>  09/21</div>
-            <div class="pos-name">PARTH RANA</div>
-            <div class="pos-cardtype">GOLD</div>  
+            <div class="pos-no"><text style="font-size:20px">${user.emiCard.cardNo}</text></div> 
+            <div class="pos-expiry"><text style="color:silver;font-size:10px" >EXPIRY :</text>${dateParts[1]}/${dateParts[0]}</div>
+            <div class="pos-name">${user.firstName} ${user.lastName}</div>
+            <div class="pos-cardtype">${user.emiCard.cardType}</div>  
             <div class="pos-bankname">BANK NAME</div>
         </div>
 
       
         <div style="padding-left:55px;padding-top:20px; font-size:18px;">
-                <p>TOTAL CREDIT:</p>
-                <p>CREDIT USED:</p>
-                <p>REMAINING CREDIT:</p>
+                <p> TOTAL CREDIT:${user.emiCard.cardLimit}</p>
+                <p> CREDIT USED:${user.emiCard.creditUsed}</p>
+                <p> REMAINING CREDIT:${(user.emiCard.cardLimit)-(user.emiCard.creditUsed)}</p>
         </div>
         <hr>
        

@@ -25,7 +25,7 @@ public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
-	
+
 	@Autowired
 	private UserDao userDao;
 
@@ -61,11 +61,11 @@ public class AdminController {
 		System.out.println(user.getFirstName());
 		EmiCard card = user.getEmiCard();
 		
-		if("1".equals(cardStatus)) {
+		if(cardStatus == 1) {
+			System.out.println("active");
 			card.setCardstatus("active");
 			user.setEmiCard(card);
-			userDao.updateUser(user);
-			//status = "active";
+			userDao.upsert(user);
 		}else {
 			card.setCardstatus("inactive");
 			user.setEmiCard(card);
