@@ -31,8 +31,6 @@ public class AdminController {
 
 	
 	@RequestMapping(path="/adminverify.lti",method=RequestMethod.POST)
-	
-	
 	public String checkAdmin(LoginData data,ModelMap model)  {
 		List<User> emiUsers=adminService.fetchAllEmicardUser();
 //		for(User u:emiUsers) {

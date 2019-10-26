@@ -27,10 +27,10 @@
       </div>
       <div id="menu">
         <ul>
-          <li class="current_page_item"><a href="index.html" accesskey="1" title="">Home</a></li>
+          <li class="current_page_item"><a href="index.jsp" accesskey="1" title="">Home</a></li>
           <li><a href="login.jsp" accesskey="2" title="">Login</a></li>
           <li><a href="signup.jsp" accesskey="3" title="">Sign Up</a></li>
-          <li><a href="productlist.jsp" accesskey="4" title="">Products</a></li>
+          <li><a href="getProduct.lti" accesskey="4" title="">Products</a></li>
         </ul>
       </div>
     </div>
@@ -55,7 +55,7 @@
               <li>${products.productDetails}</li>
             </ul>
             <p class="price">Rs. ${products.productPrice}</p>
-            <p><button type="submit"  onclick="location.href='product-inst-phone.html" name=${products.productId} >Buy now</button></p>
+            <p><button type="submit"  onclick="location.href='login.jsp'" name=${products.productId} >Buy now</button></p>
             <hr/>
   </div>
     </c:forEach>

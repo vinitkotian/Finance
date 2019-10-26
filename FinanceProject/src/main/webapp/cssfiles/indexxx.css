@@ -111,7 +111,7 @@ a:hover
 	#page-wrapper
 	{
 		overflow: hidden;
-		padding: 0em 0em 5em;
+		padding: 0em 0em 1em;
 		background: #31516A;
 		color: white;
 	}
@@ -126,6 +126,7 @@ a:hover
 	.tbox2,.tbox3
 	{
 		width: 320px;
+		top: 2em;
 	}
 	
 	.tbox1
@@ -151,39 +152,7 @@ a:hover
 	}
 	
 
-/*********************************************************************************/
-/* 3-column                                                                      */
-/*********************************************************************************/
 
-	.tboxa,
-	.tboxb,.tboxc
-	{
-		width: 340px;
-	}
-	
-	.tboxa
-	{
-		float: left;
-		margin-right:40px;
-		margin-left:40px;
-		
-	}
-	.tboxc
-	{	
-		
-		float: left;
-		margin-right:0px;
-		margin-left:0px;
-		
-	}
-
-	.tboxb
-	{
-		float: right;
-		margin-right:40px;
-		
-	}
-	
 		
 /*********************************************************************************/
 /* List Styles                                                                   */
@@ -388,26 +357,33 @@ ul.contact li a.icon-rss:before
 /* Button Style                                                                  */
 /*********************************************************************************/
 
-.button
-{
-	display: inline-block;
-	padding: 1.3em 3em;
-	background: #8B786A;
-	letter-spacing: 0.20em;
+button{
+	background-color: rgb(255, 255, 255);
+	border: none;
+	color: rgb(8, 8, 8);
+	padding: 10px 50px;
+	text-align: center;
 	text-decoration: none;
+	display: inline-block;
 	text-transform: uppercase;
-	font-weight: 600;
-	color: #FFF;
-}
+	font-size: 15px;
+	-webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+	box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	margin: 5px 20px 40px 20px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	}
+	
+	button:hover{
+	  background-color: rgb(179, 195, 247);
+	}
 
-.button:hover
-{
-	background:#383838;	
-}
 
-.button:active
-{
-}
 
 .button-big
 {
@@ -423,6 +399,8 @@ ul.contact li a.icon-rss:before
 	.title
 {
 	margin-bottom: 3em;
+	height: 2em;
+	padding-top: 20px;
 }
 
 .title h2
@@ -504,11 +482,11 @@ ul.contact li a.icon-rss:before
 #menu li a, #menu li span
 {
 	display: inline-block;
-	margin-left: 1px;
+	margin-left: 0px;
 	padding: 0em 1.5em;
 	letter-spacing: 0.10em;
 	text-decoration: none;
-	font-size: 1.2em;
+	font-size: 1.35em;
 	text-transform: uppercase;
 	outline: 0;
 	color: #212121;
@@ -652,7 +630,7 @@ img.az
 
 #header-featured
 	{
-		height: 30em;
+		height: 34em;
 		background-image: url(front.jpg);
 		background-position: center;
 		background-size: cover;
@@ -667,9 +645,9 @@ img.az
 
 #footer
 {
-	border-top: 20px solid rgba(255,255,255);
+	border-top: 9px solid rgba(255,255,255);
 	overflow: hidden;
-	padding: 5em 0em;
+	padding: 2em 0em;
 	background-color: #afe1e7;
 	text-align: center;
 	color: black;
@@ -706,16 +684,16 @@ img.az
 #copyright
 {
 	overflow: hidden;
-	padding: 5em 0em;
+	padding: 3em 0em;
 	background-color: #31516A;
-	border-top: 20px solid rgba(255,255,255);
+	border-top: 9px solid rgba(255,255,255);
 	text-align: center;
 }
 
 #copyright p
 {
 	letter-spacing: 1px;
-	font-size: 1em;
+	font-size: 18px;
 	color: rgba(255,255,255);
 }
 
@@ -773,7 +751,7 @@ img.az
 {
 	overflow: hidden;
 	margin: 0em auto 0em auto;
-	padding: 5em 0em 5em 0em;
+	padding: 1.5em 0em 1.5em 0em;
 	text-align: center;
 }
 
@@ -812,7 +790,7 @@ img.az
 	#extra2 .title h2
 	{	
 		font-weight:400;
-		margin-bottom: 2em;
+		margin-bottom: 0em;
 		border-bottom: 1px solid rgba(0,0,0,0.08);
 		text-align: center;
 		font-size: 2.6em;
@@ -828,6 +806,7 @@ img.az
 		text-transform: uppercase;
 		font-size: 1.2em;
 		color: white;
+		
 	}
 
 	#extra2 img

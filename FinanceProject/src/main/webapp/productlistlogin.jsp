@@ -30,7 +30,7 @@
           <li class="current_page_item"><a href="indexlogin.jsp" accesskey="1" title="">Home</a></li>
  
           <li><a href="dashboard.lti" accesskey="4" title="">Dashboard</a></li>
-		<li><a href="index.jsp" accesskey="4" title="">Logout</a></li>
+		<li><a href="logout.lti" accesskey="4" title="">Logout</a></li>
         </ul>
       </div>
     </div> <!--  onclick="location.href='buyProduct.lti'" -->

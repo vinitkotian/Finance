@@ -2,6 +2,8 @@ package com.lti.finance.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,7 +17,7 @@ import com.lti.finance.entity.User;
 import com.lti.finance.service.LoginService;
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes({"user","product"})
 public class LoginController {
 
 	@Autowired
@@ -30,7 +32,9 @@ public class LoginController {
 				if((user.getUserName().equals(data.getUserName())) &&(user.getPassword().equals(data.getPassword())) )
 					return "indexlogin.jsp";
 				else 
+					model.put("invalidUser","Enter Valid Credentials!!");
 					return "login.jsp";
+					
 		}
 		catch(Exception e) {
 			model.put("invalidUser","Enter Valid Credentials!!");
@@ -45,6 +49,16 @@ public class LoginController {
 		    return "index.jsp";
 		else 
 			return "indexlogin.jsp";
+		
+	}
+	
+	@RequestMapping(path="/logout.lti",method=RequestMethod.GET)
+	public String invalidateSession(HttpServletRequest request,ModelMap model) {//change name
+		request.removeAttribute("user");
+		request.removeAttribute("product");
+		request.getSession().invalidate();
+		
+			return "index.jsp";
 		
 	}
 	

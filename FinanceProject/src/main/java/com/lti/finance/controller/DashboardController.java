@@ -1,6 +1,5 @@
 package com.lti.finance.controller;
 
-import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -32,6 +31,7 @@ public class DashboardController {
 			model.get("user");
 			boolean status=transactionService.emiPayment(emiNo, installmentNo);
 			return "successfullpayment.jsp";
+			
 	}
 	
 

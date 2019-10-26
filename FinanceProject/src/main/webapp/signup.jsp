@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="cssfiles/signupp.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="cssfiles/signup.css" />
     <script src="javascriptfiles/signup.js"></script>
 </head>
     <body>
@@ -20,10 +20,10 @@
         </div>
         <div id="menu">
           <ul>
-            <li><a href="index.html" accesskey="1" title="">Home</a></li>
-            <li><a href="login.html" accesskey="2" title="">Login</a></li>
-            <li  class="current_page_item"><a href="signup.html" accesskey="3" title="">Sign Up</a></li>
-            <li><a href="productlist.html" accesskey="4" title="">Products</a></li>
+            <li><a href="home.lti" accesskey="1" title="">Home</a></li>
+            <li><a href="login.jsp" accesskey="2" title="">Login</a></li>
+            <li  class="current_page_item"><a href="#signup" accesskey="3" title="">Sign Up</a></li>
+            <li><a href="getProduct.lti" accesskey="4" title="">Products</a></li>
           </ul>
         </div>
       </div>

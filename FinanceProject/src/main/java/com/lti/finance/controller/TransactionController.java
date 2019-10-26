@@ -33,9 +33,10 @@ public class TransactionController {
 		boolean valid=tservice.buyNow(user.getUserId(), product.getProductId(),scheme);
 		
 		if(valid==true){
-		return "confirmationregistration.jsp";	
+		return "successfullpayment.jsp";	
 		}
 		return "buyProducts.jsp";
+		
 	}
 	
 	@RequestMapping(path="/emiPayment",method=RequestMethod.POST)

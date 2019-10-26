@@ -26,7 +26,7 @@
             <input type="text" id="login" class="fadeIn second" name="userName" placeholder="username"><br>
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="password"><br>
             <input type="submit" class="fadeIn fourth" value="Log In"><br>
-            <h1>${invalidUser}</h1>
+            <h3>${invalidUser}</h3>
           </form>
       
       
@@ -35,7 +35,7 @@
             <a class="underlineHover" href="forgot.html">Forgot Password?</a>
           </div>
           <div id="formFooter">
-            <a class="underlineHover" href="signup.html">New user?Create an account</a>
+            <a class="underlineHover" href="signup.jsp">New user?Create an account</a>
           </div>
       
         </div>

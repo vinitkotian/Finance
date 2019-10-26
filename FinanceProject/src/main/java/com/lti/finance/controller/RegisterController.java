@@ -53,6 +53,6 @@ public class RegisterController {
 		emiCard.setUser(user);
 		user.setEmiCard(emiCard);
 		fs.registerUser(user);
-		return "confirmation.jsp";
+		return "registrationsuccessful.jsp";
 	}
 }

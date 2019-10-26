@@ -40,6 +40,7 @@ public class ProductController {
 		} 
 		catch (IOException e) {
 			e.printStackTrace();
+
 		}
 		
 		Product product = new Product();
