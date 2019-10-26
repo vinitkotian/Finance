@@ -28,5 +28,6 @@
       </div>
 
     <h1 style="text-align:center;font-size:60px;">Successfull payment!!</h1>
+    <META http-equiv="refresh" content="3;URL=dashboard.lti">
 </body>
 </html>

@@ -19,11 +19,11 @@ public class ForgotPasswordDAO extends GenericDao{
 	public int fetchCountOfUser(ForgotPasswordDTO forgotPasswordDTO) {
 		System.out.println("in Dao");
 		Query query = entityManager.createQuery("select count(u) from User u where u.phoneNo =:phoneno");
-
 		query.setParameter("phoneno", forgotPasswordDTO.getPhoneNo());
 		System.out.println("after dao");
 		return (int) query.getSingleResult();
 	}
+	
 	@Transactional
 	public void updatePassword(ForgotPasswordDTO forgotPasswordDTO) {
 

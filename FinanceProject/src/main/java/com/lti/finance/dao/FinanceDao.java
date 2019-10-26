@@ -40,7 +40,4 @@ public class FinanceDao{
 //		return  q.getResultList();
 //
 //	}
-	
-	
-
 }

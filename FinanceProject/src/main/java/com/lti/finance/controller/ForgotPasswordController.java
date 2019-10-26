@@ -31,6 +31,7 @@ public class ForgotPasswordController {
 		int count = forgotPasswordService.checkPhoneNo(forgotPasswordDTO);	
 		if(count==1){
 			int otp = forgotPasswordService.sendOtp(forgotPasswordDTO.getPhoneNo());
+			System.out.println("sending otp");
 			forgotPasswordDTO.setOtp(otp);
 			model.put("forgotPasswordDTO",forgotPasswordDTO);
 			return "forgot2.jsp";

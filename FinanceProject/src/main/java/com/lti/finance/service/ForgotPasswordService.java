@@ -34,6 +34,7 @@ public class ForgotPasswordService {
 		// return loginDAO.fetchQuestion(loginDTO);
 		System.out.println("in service");
 		int count = forgotPasswordDao.fetchCountOfUser(forgotPasswordDTO);
+		System.out.println("after service");
 		return count;
 	}
 

@@ -94,6 +94,7 @@
                  </table>
        </div>
        <div  class="table">
+    
                  <table style="width: 80%; margin-top:10px">
                         <tr>
                         	<th>EMI NO</th>
@@ -111,6 +112,7 @@
                             <td>${installment.installmentId}</td>
                             <td>${transaction.product.productName}</td>
                             <td>${installment.dueDate}</td>
+                            
                             <c:choose>
    								<c:when test="${installment.datePaid!=null}">
    								 	<c:set var = "status"  value = "paid"/>
@@ -127,7 +129,14 @@
    								</c:when>
    								<c:otherwise>
 									 <c:set var = "status"  value = "pending"/>	 
-									<td><button >pay</button></td>
+									<td>
+									 <form action="emiPayment.lti" method="get">
+									<input type="hidden" name="emiNo" value="${transaction.emi.emiNo}"/>
+                          			<input type="hidden" name="installmentNo" value="${installment.installmentId}"/>
+                          			
+									<button type="submit">pay</button>
+									  </form>
+									</td>
 								</c:otherwise>
 								</c:choose>
                             </tr>

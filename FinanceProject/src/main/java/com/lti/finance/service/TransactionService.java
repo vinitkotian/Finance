@@ -112,20 +112,16 @@ public class TransactionService {
 		return false;
 	}
 
-	public boolean emiPayment(int txno, int userId) {
-		Transaction transaction = transactionDao.fetchTransaction(txno);
-		int emiNo = transaction.getEmi().getEmiNo();
-		List<Installment> installments = installmentDao.fetchByEmiNo(emiNo);
-		for (Installment i : installments) {
-			if (i.getDatePaid() == null) {
-				EmiCard card = userDao.fetchUserById(userId).getEmiCard();// ordered call;
-				card.setCreditUsed(card.getCreditUsed() + transaction.getEmi().getInstallmentAmount());
-				cardDao.addEmiCard(card);
-				i.setDatePaid(LocalDateTime.now());
-				installmentDao.addInstallment(i);
+	public boolean emiPayment(int emiNo, int installmentNo) {
+		//Transaction transaction = transactionDao.fetchTransaction(txno);
+		//int emiNo = transaction.getEmi().getEmiNo();
+		//List<Installment> installments = installmentDao.fetchByEmiNo(emiNo);
+		Installment installment = (Installment) installmentDao.fetchById(Installment.class, installmentNo);
+			if (installment.getDatePaid() == null) {
+				installment.setDatePaid(LocalDateTime.now());
+				installmentDao.addInstallment(installment);
 				return true;
 			}
-		}
 		return false;
 	}
 }
