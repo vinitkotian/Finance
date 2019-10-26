@@ -65,7 +65,7 @@ public class User {
 	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
 	private EmiCard emiCard;
 
-	@OneToMany(mappedBy="user" , cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="user" , cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	private Set<Transaction> transaction;
 
 	public int getUserId() {

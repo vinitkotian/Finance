@@ -34,7 +34,7 @@
       </div>
       
       
-    <div id="outer" style="border: 2px solid black;top:35em;width:99.7%;height:108vh;" >
+    <div id="outer" style="border: 2px solid black;top:35em;width:99.7%;" >
         <div class="pos-center">
             <div id="logo1">
                 <h3>DASHBOARD</h3>
@@ -51,44 +51,90 @@
             <div class="pos-bankname">BANK NAME</div>
         </div>
 
-        <div style="font-size:22px;float:right;padding-top: 4em;padding-right: 14em; font-family: cursive;">
+        <div style="font-size:22px;float:right;padding-right: 14em; font-family: cursive; height: 23px; margin-top: 65px;">
                 <p>TOTAL CREDIT:${user.emiCard.cardLimit}</p>
                 <p>CREDIT USED:${user.emiCard.creditUsed}</p>
                 <p>REMAINING CREDIT:${(user.emiCard.cardLimit)-(user.emiCard.creditUsed)}</p>
+              	<p>CARD STATUS:${user.emiCard.cardstatus}</p>
         </div>
         </div>
         <hr>
-
-       
-
         <div class="pos-center">
             <h3 class="heading">TRANSACTION HISTORY</h3>
         </div>
         <div  class="table">
                 <table style="width: 80%;">
                         <tr>
+                        	<th>TRANSACTION NO</th>
                             <th>PRODUCT NAME</th>
+                             <th>PRODUCT PRICE</th>
                             <th>PURCHASE DATE</th>
-                            <th>UPCOMING INSTALLMENT DATE</th>
+                            <th>EMI SCHEME</th>
                             <th>PAID AMT</th>
                             <th>BALANCE AMT</th>   
                         </tr>
+                         
+                        <c:forEach var="transaction" items="${user.transaction}">
+                        <c:set var = "count"  value = "${0}"/>
                         <tr>
-                            <td></td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>d</td>
-                            <td>e</td>
+                            <td>${transaction.transactionId}</td>
+                            <td>${transaction.product.productName}</td>
+                            <td>${transaction.product.productPrice}</td>
+                            <td>${transaction.emi.startDate}</td>
+                            <td>${transaction.scheme}</td>
+                            <c:forEach var="installment" items="${transaction.emi.installment}">
+                             <c:if test = "${installment.datePaid != null}">
+                           			<c:set var="count" value="${count + 1}"/>
+                                </c:if>
+                              </c:forEach>
+                            <td>${(transaction.emi.installmentAmount)*count}</td>
+                            <td>${(transaction.product.productPrice)-((transaction.emi.installmentAmount)*count)}</td>
                         </tr>
+                        </c:forEach>
+                 </table>
+       </div>
+       <div  class="table">
+                 <table style="width: 80%; margin-top:10px">
+                        <tr>
+                        	<th>EMI NO</th>
+                            <th>INSTALLMENT NO</th>
+                             <th>PRODUCT NAME</th>
+                            <th>DUE DATE </th>
+                            <th>STATUS</th>
+                            <th>PAY EMI</th>
+                        </tr>
+                          <c:forEach var="transaction" items="${user.transaction}">
+                        <c:set var = "status"  value = "pending"/>
+                        <c:forEach var="installment" items="${transaction.emi.installment}">
+                        <tr>	
+                            <td>${transaction.emi.emiNo}</td>
+                            <td>${installment.installmentId}</td>
+                            <td>${transaction.product.productName}</td>
+                            <td>${installment.dueDate}</td>
+                            <c:choose>
+   								<c:when test="${installment.datePaid!=null}">
+   								 	<c:set var = "status"  value = "paid"/>
+   								</c:when>
+   								<c:otherwise>
+									 <c:set var = "status"  value = "pending"/>	 
+								</c:otherwise>
+							</c:choose>
+                            <td>${status}</td>
+                            <c:choose>
+   								<c:when test="${installment.datePaid!=null}">
+   								 	<c:set var = "status"  value = "paid"/>
+   								 	<td>${status}</td>
+   								</c:when>
+   								<c:otherwise>
+									 <c:set var = "status"  value = "pending"/>	 
+									<td><button >pay</button></td>
+								</c:otherwise>
+								</c:choose>
+                            </tr>
+                            </c:forEach>
+                        </c:forEach>
                  </table>
         </div>
-        <div class="pos-center">
-                <h3 style="color:red;font-size:30px;">Pay your installment now!</h3>
-                <button type="submit" onclick="location.href='payment.html'">Pay Now</button>
-        </div>
-
-
-        
     </div>
     </body>
 </html>

@@ -37,8 +37,8 @@ public class EmiCard {
 	private double creditUsed;
 	
 	@Column(name="CARD_STATUS")
-	private String cardstatus;
-	
+	private String cardstatus;///////////////////////////////////////
+	//TODO
 	@OneToOne
 	@JoinColumn(name="User_Id")
 	private User user;

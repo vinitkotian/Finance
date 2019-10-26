@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -38,13 +39,12 @@ public class Emi {
 	@JoinColumn(name="TRANSACTION_ID")
 	private Transaction transaction;
 	
-	@OneToMany(mappedBy="emi",cascade=CascadeType.ALL)//new
+	@OneToMany(mappedBy="emi",cascade=CascadeType.ALL,fetch=FetchType.EAGER)//new
 	private Set<Installment> installment;//new
 
 	@Column(name="STATUS")
 	private  String status ;
-	
-	
+
 	public String getStatus() {
 		return status;
 	}
