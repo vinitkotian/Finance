@@ -18,15 +18,12 @@ public class DashboardController {
 	private TransactionService transactionService;
 	
 	@RequestMapping(path="/dashboard.lti",method=RequestMethod.GET)
-	public String userDashboard(LoginData data,ModelMap model) {
+	public String userDashboard(ModelMap model) {
 			model.get("user");
-			//System.out.println(user.);
-			//System.out.println("ididi"+userId);
-//		    model.put("user", user);
 			return "dashboard.jsp";
 	}
 	
-	@RequestMapping(path="/emiPayment.lti",method=RequestMethod.GET)
+	@RequestMapping(path="/emiPayment.lti",method=RequestMethod.POST)
 	public String emiPayment(LoginData data,ModelMap model,@RequestParam("emiNo") int emiNo,@RequestParam("installmentNo") int installmentNo) {
 			model.get("user");
 			boolean status=transactionService.emiPayment(emiNo, installmentNo);

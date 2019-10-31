@@ -51,21 +51,20 @@ public class AdminController {
 		}	
 	
 	
-	@RequestMapping(path="/activatedeactivate.lti",method=RequestMethod.GET)
-	public String activateDeactivate(ModelMap model,@RequestParam("cardStatus") int cardStatus,@RequestParam("emiuserid") int userId){
-		System.out.println(cardStatus);
-		System.out.println(userId);
+	@RequestMapping(path="/activatedeactivate.lti",method=RequestMethod.POST)
+	public String activateDeactivate(ModelMap model,@RequestParam("cardStatus") int cardStatus,@RequestParam("emiuserid") int userId,@RequestParam("comments") String comments){
 		User user = userDao.fetchUserById(userId);
 		System.out.println(user.getFirstName());
 		EmiCard card = user.getEmiCard();
 		
 		if(cardStatus == 1) {
-			System.out.println("active");
 			card.setCardstatus("active");
+			card.setComments(comments);
 			user.setEmiCard(card);
-			userDao.upsert(user);
+			userDao.updateUser(user);
 		}else {
 			card.setCardstatus("inactive");
+			card.setComments(comments);
 			user.setEmiCard(card);
 			userDao.updateUser(user);
 		}

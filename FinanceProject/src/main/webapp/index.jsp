@@ -8,7 +8,7 @@
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
-<link href="cssfiles/indexxx.css" rel="stylesheet" type="text/css" media="all" />
+<link href="cssfiles/indexx.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
@@ -94,16 +94,16 @@
 
 		<div class="tbox2">
 			<div class="padding-bottom">
-				<h2>Mi Band 3</h2>
-				<a href="getProduct.lti"><img src="images/miband3.jpg"/></a>
+				<h2>Laptop</h2>
+				<a href="getProduct.lti"><img src="images/Dell-Laptop.jpg"/></a>
 				<!--<img src="images/miband.jpg" alt="" />-->
 			</div>
 		</div>
 
 		<div class="tbox3">
 			<div class="padding-bottom">
-				<h2>HP Laptop</h2>
-				<a href="getProduct.lti"><img src="images/laptop.jpg"/></a>
+				<h2>MI tv</h2>
+				<a href="getProduct.lti"><img src="images/Mi TV 4X-tv.jpg"/></a>
 				<!--<img src="images/laptop1.jpg" alt="" />-->
 			</div>
 		</div>

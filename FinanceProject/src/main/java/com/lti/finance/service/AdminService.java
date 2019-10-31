@@ -16,7 +16,5 @@ public class AdminService {
 	public List<User>fetchAllEmicardUser(){
 		List<User> Users = userDao.fetchAllEmicardUser();
 		return Users;
-		
-	
 }
 }

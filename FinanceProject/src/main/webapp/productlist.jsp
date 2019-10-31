@@ -55,7 +55,7 @@
               <li>${products.productDetails}</li>
             </ul>
             <p class="price">Rs. ${products.productPrice}</p>
-            <p><button type="submit"  onclick="location.href='login.jsp'" name=${products.productId} >Buy now</button></p>
+            <p><button type="submit"  onclick="location.href='#login'" name=${products.productId} >Buy now</button></p>
             <hr/>
   </div>
     </c:forEach>

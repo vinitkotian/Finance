@@ -40,15 +40,4 @@ public class InstallmentDao extends GenericDao {
 			throw new DataAccessException("No record found by emi no:" + emiNo);
 		}
 	}
-
-//	public List<Installment> fetchInstallmentByOrder(int emiNo) {
-//		try {
-//			Query q = entityManager
-//					.createQuery("select  i from Installment as i where i.emi.emiNo=:emiNo order by i.installmentNo ");
-//			q.setParameter("emiNo", emiNo);
-//			return q.getResultList();
-//		} catch (NoResultException e) {
-//			throw new DataAccessException("No record found by emi no:" + emiNo);
-//		}
-//	}
 }

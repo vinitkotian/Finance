@@ -114,7 +114,7 @@
               </tr>
               <tr>
                 <td><input type="radio" name="emiScheme" value=6>6 Months</td>
-                <td><fmt:formatNumber type = "number" maxFractionDigits = "2" value = "${product.productPrice/3}"/></td>
+                <td><fmt:formatNumber type = "number" maxFractionDigits = "2" value = "${product.productPrice/6}"/></td>
                 <td>${product.productPrice}</td>
               </tr>
               <tr>

@@ -29,7 +29,6 @@ public class TransactionController {
 	public String buyNow(@RequestParam("emiScheme") int scheme,HttpServletRequest request,ModelMap model){
 		User user =(User)request.getSession().getAttribute("user");
 		Product product =(Product)request.getSession().getAttribute("product");
-		System.out.println("user id"+user.getUserName()+"product"+product.getProductName()+"sc"+scheme);
 		boolean valid=tservice.buyNow(user.getUserId(), product.getProductId(),scheme);
 		
 		if(valid==true){

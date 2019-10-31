@@ -39,10 +39,8 @@ public class RegisterController {
 		user.setBankName(data.getBank());
 		user.setAccountNo(data.getAcno());
 		user.setIfsc(data.getIfsc());
-		//System.out.println(data.getIfsc());
 		user.setActivationDate(LocalDate.now());
-		//System.out.println(LocalDate.now());
-		System.out.println(data.getCardType());
+		
 		EmiCard emiCard = new EmiCard();
 		emiCard.setCardLimit(cardService.checkCardType(data.getCardType()));
 		emiCard.setActivationDate(LocalDate.now());
@@ -50,6 +48,7 @@ public class RegisterController {
 		emiCard.setExpiryDate(LocalDate.now().plusYears(4));
 		emiCard.setCardstatus("inactive");
 		emiCard.setCreditUsed(0);
+		emiCard.setComments("Thank-you for Using Service");
 		emiCard.setUser(user);
 		user.setEmiCard(emiCard);
 		fs.registerUser(user);

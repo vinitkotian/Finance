@@ -20,14 +20,14 @@
           </div>
           <div id="menu">
             <ul>
-              <li class="current_page_item"><a href="indexlogin.jsp" accesskey="1" title="">Home</a></li>
-              <li><a href="getProduct.lti" accesskey="4" title="">Products</a></li>
+              <li class="current_page_item"><a href="index.html" accesskey="1" title="">Home</a></li>
+              <li><a href="productlist.html" accesskey="4" title="">Products</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-    <h1 style="text-align:center;font-size:60px;">Successfull payment!!</h1>
-    <META http-equiv="refresh" content="3;URL=dashboard.jsp">
+    <h1 style="text-align:center;font-size:60px;">Product Added Successfully </h1>
+    <META http-equiv="refresh" content="3;URL=addproduct.jsp">
 </body>
 </html>

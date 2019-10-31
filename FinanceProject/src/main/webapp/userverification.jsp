@@ -24,8 +24,8 @@
           </div>
           <div id="menu">
             <ul>
-              <li><a href="indexlogin.jsp" title="">Home</a></li>
-              <li  class="current_page_item"><a href="adminverification.jsp"  title="">Requests</a></li>
+              <li><a href="#home" title="">Home</a></li>
+              <li  class="current_page_item"><a href="#request"  title="">Requests</a></li>
               <li><a href="addproduct.jsp" title="">Add Product</a></li>
               <li><a href="index.jsp" title="">Logout</a></li>
             </ul>
@@ -54,7 +54,7 @@
                         </tr>
                          <c:forEach var="emiCardUser" items="${emiCardUser}">
                         <tr>
-                      		<form action="activatedeactivate.lti" method="get" >
+                      		<form action="activatedeactivate.lti" method="post" >
                             <td>${emiCardUser.firstName}  ${emiCardUser.lastName}  ${emiCardUser.userId}</td>
                             <td>${emiCardUser.userName}</td>
                             <td>${emiCardUser.email}</td>
@@ -62,7 +62,7 @@
                             <td>${emiCardUser.emiCard.cardNo}</td>
                             <td>${emiCardUser.emiCard.cardType}</td>
                             <td>${emiCardUser.emiCard.cardstatus}</td>
-                            <td><textarea style="resize:none;"  ></textarea></td>
+                            <td><textarea name="comments" style="resize:none;"  ></textarea></td>
                             <td>
                                       <!--<input type="radio" name="status" value="1"> ACTIVATE <br>
                                         <input type="radio" name="status" value="0"> DEACTIVATE<br>--> 

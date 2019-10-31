@@ -52,7 +52,7 @@ public class ProductController {
 		
 	
 		fs.addProduct(product);
-		return "confirmation.jsp";
+		return "productaddedsuccessfully.jsp";
 	
 }
 	
@@ -76,11 +76,7 @@ public class ProductController {
 				e.printStackTrace();
 			}
 		}
-		model.put("products", products);
-//		for(Product p : products) {
-//			System.out.println(p.getProductName());
-//		}
-		
+		model.put("products", products);		
 	
 		if(model.get("user") == null)
 		    return "productlist.jsp";

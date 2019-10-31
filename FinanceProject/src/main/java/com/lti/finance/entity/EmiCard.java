@@ -37,7 +37,10 @@ public class EmiCard {
 	private double creditUsed;
 	
 	@Column(name="CARD_STATUS")
-	private String cardstatus;///////////////////////////////////////
+	private String cardstatus;
+	
+	@Column(name="COMMENTS")
+	private String comments;
 	//TODO
 	@OneToOne
 	@JoinColumn(name="User_Id")
@@ -107,6 +110,14 @@ public class EmiCard {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
 	}
 	
 	

@@ -19,17 +19,6 @@ public class LoginService {
 		}catch(Exception e){
 			return null;
 		}
-//		System.out.println("fd"+user.getUserName()+""+user.getPassword());
-//		if(password.equals(user.getPassword()) && username.equals(user.getUserName())) {
-//			return true;
-//		}
-//		else{
-//			return false;
-//		}
-		
-		
-	
-	
 	}
 }
 

@@ -56,27 +56,28 @@
         </div>
         <div style="height:25em;">
             <c:set var="dateParts" value="${fn:split(user.emiCard.expiryDate, '-')}" />
-            <div class="card container" style="top:5em;left:13em;float:left;">
+            <div class="card container" style="top:4em;left:13em;float:left;">
                 <img id="a" src="images/cardimg.png" style="border:1px solid black;">
                 <div class="pos-no"><text style="font-size:20px">${user.emiCard.cardNo}</text></div> 
                 <div class="pos-expiry"><text style="color:silver;font-size:10px" >EXPIRY :${dateParts[1]}/${dateParts[0]} </div>
                 <div class="pos-name">${user.firstName} ${user.lastName}</div>
                 <div class="pos-cardtype">${user.emiCard.cardType}</div>  
-                <div class="pos-bankname">BANK NAME</div>
+                <div class="pos-bankname">EMI Finance</div>
         </div>
 
-        <div style="font-size:22px;float:right;padding-top: 4em;padding-right: 14em; font-family: cursive;">
+        <div style="font-size:22px;float:right;padding-top: 3em;padding-right: 14em; font-family: cursive;">
             <p>TOTAL CREDIT:${user.emiCard.cardLimit}</p>
             <p>CREDIT USED:${user.emiCard.creditUsed}</p>
             <p>REMAINING CREDIT:${(user.emiCard.cardLimit)-(user.emiCard.creditUsed)}</p>
             <p>CARD STATUS:${user.emiCard.cardstatus}</p>
+            <p>COMMENTS:${user.emiCard.comments}</p>
         </div>
         <br>
         <div>
-            <div style="float:left; padding-top:20em;padding-left:2em;    margin-left: 6em;">
+            <div style="float:left; padding-top:3em;padding-left:10em;    margin-left: 6em;">
                     <button onclick="return display1()" >TRANSACTION HISTORY</button>
             </div>
-            <div style="float:right;padding-left: 1em;padding-right: 19em;margin-top: 1.5em;">
+            <div style="float:right;padding-left: 1em;padding-right: 19em;margin-top: -0.5em;">
                     <button onclick="return display2()">UPCOMING INSTALLMENTS</button>
             </div>
         </div>
@@ -162,7 +163,7 @@
                                        <c:otherwise>
                                          <c:set var = "status"  value = "pending"/>	 
                                         <td>
-                                         <form action="emiPayment.lti" method="get">
+                                         <form action="emiPayment.lti" method="post">
                                         <input type="hidden" name="emiNo" value="${transaction.emi.emiNo}"/>
                                           <input type="hidden" name="installmentNo" value="${installment.installmentId}"/>
                                           

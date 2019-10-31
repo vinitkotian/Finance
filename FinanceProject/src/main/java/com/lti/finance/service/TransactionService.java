@@ -44,9 +44,9 @@ public class TransactionService {
 
 	public boolean transactionValidity(int userId, int pId) {
 		User user = (User) userDao.fetchUserById(userId);
-		//System.out.println(user.getFirstName());
+	
 		Product product = (Product) productDao.fetchProductById(pId);
-		//System.out.println(product.getProductName());
+
 		EmiCard card = user.getEmiCard();
 		double maxLimit = card.getCardLimit();
 		double usedAmount = card.getCreditUsed();
@@ -55,10 +55,10 @@ public class TransactionService {
 			card.setCreditUsed(card.getCreditUsed() + product.getProductPrice());
 			user.setEmiCard(card);
 			userDao.updateUser(user);
-			//System.out.println("in transaction");
+			
 			return true;
 		}
-		//System.out.println("in transaction validity");
+		
 		return false;
 	}
 
@@ -68,7 +68,7 @@ public class TransactionService {
 		Product product = (Product) productDao.fetchProductById(pId);
 		if (transactionValidity(userId, pId)) {
 			// Adding Transaction record for product purchase.
-			//System.out.println(user.getFirstName());
+
 			
 			Transaction transaction = new Transaction();
 
@@ -103,19 +103,15 @@ public class TransactionService {
 
 			emi.setInstallment(installments);
 			transaction.setEmi(emi);
-			System.out.println("where");
+			
 			transactionDao.upsert(transaction);
 
 			return true;
 		}
-		System.out.println("in buynow");
 		return false;
 	}
 
 	public boolean emiPayment(int emiNo, int installmentNo) {
-		//Transaction transaction = transactionDao.fetchTransaction(txno);
-		//int emiNo = transaction.getEmi().getEmiNo();
-		//List<Installment> installments = installmentDao.fetchByEmiNo(emiNo);
 		Installment installment = (Installment) installmentDao.fetchById(Installment.class, installmentNo);
 			if (installment.getDatePaid() == null) {
 				installment.setDatePaid(LocalDateTime.now());

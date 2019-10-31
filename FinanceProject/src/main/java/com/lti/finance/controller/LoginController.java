@@ -44,7 +44,7 @@ public class LoginController {
 	
 	
 	@RequestMapping(path="/home.lti",method=RequestMethod.GET)
-	public String checkUserSession(LoginData data,ModelMap model) {//change name
+	public String checkUserSession(ModelMap model) {
 		if(model.get("user") == null)
 		    return "index.jsp";
 		else 
@@ -53,9 +53,8 @@ public class LoginController {
 	}
 	
 	@RequestMapping(path="/logout.lti",method=RequestMethod.GET)
-	public String invalidateSession(HttpServletRequest request,ModelMap model) {//change name
-		request.removeAttribute("user");
-		request.removeAttribute("product");
+	public String invalidateSession(HttpServletRequest request,ModelMap model) {
+		request.getSession().removeAttribute("user");
 		request.getSession().invalidate();
 		
 			return "index.jsp";
